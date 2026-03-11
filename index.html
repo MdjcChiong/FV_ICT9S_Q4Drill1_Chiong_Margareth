@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4Practice1</title>
+</head>
+<body>
+    <h1>Electricity Consumption Classifier</h1>
+
+    <input type="text" id="Consumption" class="form-control" placeholder="type here...">
+    <button class="btn btn-info" onclick="checkConsumption()">Check</button>
+
+    <script>
+        //checkConsumption
+        function checkConsumption(){
+
+            var consumption = document.getElementById(" Consumption").value;
+
+            if(isNaN(Consumption) || Consumption < 0){
+                alert("Please input a valid consumption.");
+
+            }
+
+        if (Consumption < 100){
+            alert("Discounted electricity rates")
+        }
+        else if(Consumption > 200){
+            alert("Normal residential rate")
+         }
+          else if(Consumption > 300){
+            alert("Typical electricity usage")
+          }
+          else if(Consumption > 500){
+            alert("Higher electricity usage")
+          }
+        else {
+            alert("Your usage could not be classified");
+        }
+    }
+    
+     </script>
+</body>
+</html>
