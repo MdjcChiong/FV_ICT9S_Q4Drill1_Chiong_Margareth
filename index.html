@@ -8,37 +8,48 @@
 <body>
     <h1>Electricity Consumption Classifier</h1>
 
-    <input type="text" id="Consumption" class="form-control" placeholder="type here...">
-    <button class="btn btn-info" onclick="checkConsumption()">Check</button>
+<div class="container-box">
 
-    <script>
-        //checkConsumption
-        function checkConsumption(){
+<input type="text" id="kwh" placeholder="Enter kWh">
+<br>
 
-            var consumption = document.getElementById(" Consumption").value;
+<button onclick="classify()">Consumption Classification</button>
 
-            if(isNaN(Consumption) || Consumption < 0){
-                alert("Please input a valid consumption.");
+</div>
 
-            }
+<script>
 
-        if (Consumption < 100){
-            alert("Discounted electricity rates")
-        }
-        else if(Consumption > 200){
-            alert("Normal residential rate")
-         }
-          else if(Consumption > 300){
-            alert("Typical electricity usage")
-          }
-          else if(Consumption > 500){
-            alert("Higher electricity usage")
-          }
-        else {
-            alert("Your usage could not be classified");
-        }
-    }
-    
-     </script>
+function classify(){
+
+var kwh = document.getElementById("kwh").value;
+
+if(isNaN(kwh) || kwh < 0){
+    alert("Please input a valid number.");
+}
+
+else if(kwh < 100){
+    alert("Lifeline Consumer: Discounted electricity rates.");
+}
+
+else if(kwh < 200){
+    alert("Low Consumption: Normal residential rate.");
+}
+
+else if(kwh < 300){
+    alert("Average Consumption: Typical electricity usage.");
+}
+
+else if(kwh < 500){
+    alert("High Consumption: Higher electricity usage.");
+}
+
+else{
+    alert("Very High Consumption: Heavy electricity users.");
+}
+
+}
+
+</script>
+
 </body>
 </html>
